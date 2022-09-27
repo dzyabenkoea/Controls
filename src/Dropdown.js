@@ -1,3 +1,5 @@
+import './dropdown.css'
+
 const Dropdown = function () {
 
     function render() {
