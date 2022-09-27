@@ -5,53 +5,65 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 const Dropdown = function () {
 
     function render() {
-        const div = document.createElement('div')
-        div.classList.add('dropdown')
-        div.innerHTML = `
+        const dropDownMain = document.createElement('div')
+        dropDownMain.classList.add('dropdown')
+        dropDownMain.innerHTML = `
         <div class="dropdown-button">
             DropDown
             <i class="bi bi-caret-down-fill"></i>
         </div>
-        <div class="dropdown-list">
-            <a class="dropdown-list-item" href="#">Первая ссылка</a>
+        <div class="dropdown-list display-none">
+            <a class="dropdown-list-item " href="#">Первая ссылка</a>
             <a class="dropdown-list-item" href="#">Вторая ссылка</a>
             <a class="dropdown-list-item" href="#">Первая ссылка</a>
             <a class="dropdown-list-item" href="#">Первая ссылка</a>
         </div>`
 
-        const drop = div.querySelector('.dropdown-button')
-        const list = div.querySelector('.dropdown-list')
-        const icon = div.querySelector('.dropdown-button i')
+        const button = dropDownMain.querySelector('.dropdown-button')
+        const list = dropDownMain.querySelector('.dropdown-list')
+        const icon = dropDownMain.querySelector('.dropdown-button i')
 
-        drop.addEventListener('click', (event) => {
-            drop.classList.toggle('clicked')
+        let extended = false
 
-            if (drop.classList.contains('clicked')) {
-                icon.classList.add('bi-caret-up-fill')
-                icon.classList.remove('bi-caret-down-fill')
-
-            } else {
-                icon.classList.remove('bi-caret-up-fill')
-                icon.classList.add('bi-caret-down-fill')
+        list.addEventListener('transitionend', () => {
+            if (!extended) {
+                list.classList.add('display-none')
             }
         })
 
-        function removeFocusHandler(event) {
-            if (event.path.find(el => el !== drop)) {
-                drop.classList.remove('clicked')
+        function extend() {
+            list.classList.remove('display-none')
+            setTimeout(() => {
+                button.classList.add('clicked')
+                icon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill')
+            }, 0)
+            extended = true
+        }
+
+        function collapse() {
+            button.classList.remove('clicked')
+            icon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill')
+            extended = false
+        }
+
+        button.addEventListener('click', (event) => {
+            if (extended) collapse()
+            else extend()
+        })
+
+        function removeFocusAfterClick(event) {
+            if (event.path.find(el => el !== dropDownMain)) {
+                collapse()
             }
         }
 
-        document.addEventListener('click', removeFocusHandler)
+        document.addEventListener('click', removeFocusAfterClick)
 
-        return div
+        return dropDownMain
     }
 
     return {render}
 }()
 
-const drop = Object.create(Dropdown)
-
-document.querySelector('.menu').append(Object.create(Dropdown).render())
 document.querySelector('.menu').append(Object.create(Dropdown).render())
 document.querySelector('.menu').append(Object.create(Dropdown).render())

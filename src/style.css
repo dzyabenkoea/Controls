@@ -6,6 +6,10 @@ html {
     font-family: system-ui;
 }
 
+.dropdown-list.display-none {
+    display: none;
+}
+
 .dropdown-list {
     position: absolute;
     display: flex;
