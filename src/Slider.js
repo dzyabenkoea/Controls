@@ -1,4 +1,6 @@
 
+import './slider.css'
+
 class Slider{
     constructor() {
     }
