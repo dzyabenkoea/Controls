@@ -5,4 +5,4 @@ import {Slider} from "./Slider";
 document.querySelector('.menu').append(Object.create(Dropdown).render())
 document.querySelector('.menu').append(Object.create(Dropdown).render())
 
-document.querySelector('.menu').after(new Slider().render())
+document.querySelector('.slider-container').append(new Slider().render())

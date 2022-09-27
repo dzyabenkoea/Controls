@@ -6,7 +6,19 @@ html {
     font-family: system-ui;
 }
 
+#app{
+    display: flex;
+    flex-direction: column;
+}
+
 .menu{
     display: flex;
     gap: 1rem;
+}
+
+.slider-container{
+    margin-top: 5rem;
+    align-self: center;
+    width: 80%;
+    height: 20rem;
 }
