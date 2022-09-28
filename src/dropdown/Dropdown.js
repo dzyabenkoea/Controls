@@ -1,5 +1,6 @@
 import './dropdown.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import './dropdown.css'
 
 const Dropdown = function () {
 
