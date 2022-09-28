@@ -1,6 +1,6 @@
 import './index.css'
-import {Dropdown} from "./dropdown/Dropdown";
-import {Slider} from "./slider/Slider";
+import {Dropdown} from "./dropdown/dropdown";
+import {Slider} from "./slider/slider";
 
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
