@@ -8,9 +8,9 @@ const Menu = (function () {
         <div class="menu-items-container">
             <div class="logo"><h2>Логотип</h2></div>
             <div class="menu-items">
-                <div class="div menu-item">Пункт 1</div>
-                <div class="div menu-item">Пункт 2</div>
-                <div class="div menu-item">Пункт 3</div>
+                <div class="menu-item">Пункт 1</div>
+                <div class="menu-item">Пункт 2</div>
+                <div class="menu-item">Пункт 3</div>
             </div>
             <div class="menu-burger menu-item" style="color: white">
                 menu
