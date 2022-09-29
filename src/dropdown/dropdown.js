@@ -52,7 +52,6 @@ const Dropdown = function () {
         })
 
         function removeFocusAfterClick(event) {
-
             if (event.path.find(el => el === dropDownMain) === undefined) {
                 collapse()
             }
