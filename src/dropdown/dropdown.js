@@ -9,7 +9,7 @@ const Dropdown = function () {
         dropDownMain.classList.add('dropdown')
         dropDownMain.innerHTML = `
         <div class="dropdown-button">
-            DropDown
+            <div>Drop</div>
             <i class="bi bi-caret-down-fill"></i>
         </div>
         <div class="dropdown-list display-none">
