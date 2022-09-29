@@ -967,7 +967,7 @@ const Dropdown = function () {
             }
         }
 
-        document.addEventListener('click', removeFocusAfterClick)
+        document.addEventListener('click', removeFocusAfterClick.bind(this))
 
         return dropDownMain
     }
